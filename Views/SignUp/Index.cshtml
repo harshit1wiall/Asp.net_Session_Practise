@@ -1,0 +1,76 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+  <head>
+      <link rel="stylesheet" href="../wwwroot/css/SignUp.css" type="text/css">
+      
+  </head>
+
+<body>
+    <section class="vh-100 bg-image">
+        <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+            <div class="container h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body p-5">
+                                <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+
+                                <form enctype="multipart/form-data" asp-controller="SignUp" asp-action="Index">
+
+                                    <div class="form-outline mb-4">
+                                        <input type="text" id="form3Example1cg" class="form-control form-control-lg" required/>
+                                        <label class="form-label" for="form3Example1cg">Your Name</label>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <input type="email" id="Email" name="Email" class="form-control form-control-lg" required />
+                                        <label class="form-label" for="Email">Your Email</label>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <input type="password" id="password" name="password" class="form-control form-control-lg" required />
+                                        <label class="form-label" for="password">Password</label>
+                                    </div>
+
+                                    @*<div class="form-outline mb-4">
+                                        <input type="password" id="repassword" name="repassword" class="form-control form-control-lg" required />
+                                        <label class="form-label" for="repassword">Repeat your password</label>
+                                    </div>*@
+
+                                   @* <div class="form-check d-flex justify-content-center mb-5">
+                                        <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
+                                        <label class="form-check-label" for="form2Example3g">
+                                            I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
+                                        </label>
+                                    </div>*@
+
+                                    <div class="d-flex justify-content-center">
+                                        <button type="submit"
+                                                class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">
+                                            Register
+                                        </button>
+                                    </div>
+
+                                    <p class="text-center text-muted mt-5 mb-0">
+                                        Have already an account? <a href="/Login"
+                                                                    class="fw-bold text-body"><u>Login here</u></a>
+                                    </p>
+                                   
+                                       
+                                   @* <p class="d-flex justify-content-center text-danger">@(ViewBag.result)</p>*@
+                                </form>
+                                <div class="text-center">
+                                    <h3 class=@(ViewBag.message!=null && ViewBag.success?"text-success":"text-danger")>@ViewBag.message</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+  @*  <p>@(ViewBag.email!=null && ViewBag.email.Length>0?"These are the info entered:"+ViewBag.email+"\n"+ViewBag.password:"")</p>*@
+
+</body>
