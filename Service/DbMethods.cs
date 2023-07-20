@@ -33,11 +33,11 @@ namespace LoginPage.Service
             return await result.ToListAsync();
         }
 
-        public async Task<bool> FindUserByEmail(string email, string password)
+        public async Task<bool> FindUserByEmail(string username, string email, string password)
         {
             var collection = ConnectToMongo<People>(userCollection);
 
-            var result = await collection.FindAsync(u => u.Email.Equals(email) && u.Password.Equals(password));
+            var result = await collection.FindAsync(u => (u.Username.Equals(username) || u.Email.Equals(email)) && u.Password.Equals(password));
             return result.Any() ? true : false;
         }
 

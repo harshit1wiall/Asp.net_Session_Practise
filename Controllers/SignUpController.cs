@@ -22,12 +22,10 @@ namespace LoginPage.Controllers
         public async Task<IActionResult> Index(People? user)
         {
 
-            string? name = user != null ? user.Name : "";
-            Console.WriteLine(name);
             if (user != null)
             {
                 DbMethods db = new DbMethods();
-                var userExist = await db.FindUserByEmail(user.Email, user.Password);
+                var userExist = await db.FindUserByEmail(user.Username, user.Email, user.Password);
                 if (userExist)
                 {
                     ViewBag.success = false;
@@ -56,22 +54,3 @@ namespace LoginPage.Controllers
 
 
 }
-/* if (password != repassword)
-             {
-                 ViewBag.result = "Password doesnt match";
-             }
-             else
-             {
-                 ViewBag.result = "Stored";
-                 //  return RedirectToAction("Index", "Login");
-                *//* var person = new MongoDBdemo() { Email = email, Password = password };
-                 await collection.InsertOneAsync(person);*//*
-
-                 //  var result = await collection.FindAsync(_ => true);
-             }
-            var person = new People() { Email = email, Password = password };
-            await collection.InsertOneAsync(person);
-
-
-            return View();
-            */

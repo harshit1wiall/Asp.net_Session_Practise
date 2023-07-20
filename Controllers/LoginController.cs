@@ -22,16 +22,18 @@ namespace LoginPage.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(string email, string password)
         {
+
             //Console.WriteLine("Top-->" + email + " " + password);
             if (email != null && password != null)
             {
+                var username = email;
                 //Console.WriteLine("In if condition--> " + email + " " + password);
                 try
                 {
                     DbMethods db = new DbMethods();
 
 
-                    var result = await db.FindUserByEmail(email, password);
+                    var result = await db.FindUserByEmail(username, email, password);
                     if (result)
                     {
                         ViewBag.status = true;
