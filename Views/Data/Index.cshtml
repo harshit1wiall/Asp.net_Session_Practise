@@ -1,0 +1,23 @@
+﻿<head>
+    <link rel="stylesheet" type="text/css" href="/css/Data.css" />
+
+</head>
+
+
+ <body>
+   <div class="detail">
+        <form enctype="multipart/form-data" asp-controller="Data" asp-action="Index">
+            <fieldset>
+                <legend>Details:</legend>
+
+                <p><label for="Username">Name: </label></p>
+                <input type="text" name="Username" id="Username" placeholder="Enter your Name">
+                <p><label for="Description">Description: </label></p>
+                <textarea id="Description" name="Description" rows="5" cols="73" placeholder="Add data here!!"></textarea><br />
+                <div class="d-flex justify-content-center">
+                    <button type="submit"class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Submit</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</body>

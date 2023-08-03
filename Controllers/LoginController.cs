@@ -26,14 +26,15 @@ namespace LoginPage.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(string email, string password)
         {
+            TempData["name"] = email;
+
             if (email != null && password != null)
             {
                 var username = email;
+
                 try
                 {
                     DbMethods db = new DbMethods();
-
-
                     var result = await db.FindUserByEmail(username, email, password);
                     if (result)
                     {
@@ -42,6 +43,7 @@ namespace LoginPage.Controllers
                         if (HttpContext.Session.IsAvailable && HttpContext.Session.GetString("User").Any())
                         {
                             ViewBag.status = true;
+
                             return RedirectToAction("Index", "Home");
                         }
                         else
@@ -52,6 +54,7 @@ namespace LoginPage.Controllers
 
                     else
                     {
+                        Console.WriteLine(ViewBag.user);
                         ViewBag.status = false;
                         ViewBag.message = "User not found";
                         return View();

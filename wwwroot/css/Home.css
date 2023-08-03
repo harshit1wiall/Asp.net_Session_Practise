@@ -1,0 +1,17 @@
+﻿body{
+    margin:0;
+    padding:0;
+    display:flex;
+    text-align:center;
+    justify-content:center;
+    height:33%;
+}
+
+.container {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0,0.1);
+}
+    

@@ -7,7 +7,7 @@ namespace LoginPage.Service
     {
         /*mongodb://hash:123@ac-rwkaegx-shard-00-00.gfyyaga.mongodb.net:27017,ac-rwkaegx-shard-00-01.gfyyaga.mongodb.net:27017,ac-rwkaegx-shard-00-02.gfyyaga.mongodb.net:27017/?ssl=true&replicaSet=atlas-hsyte0-shard-0&authSource=admin&retryWrites=true&w=majority*/
         /*  mongodb+srv://hash:<password>@cluster0.gfyyaga.mongodb.net/?retryWrites=true&w=majority*/
-        private const string connectionString = "mongodb://hash:123@ac-rwkaegx-shard-00-00.gfyyaga.mongodb.net:27017,ac-rwkaegx-shard-00-01.gfyyaga.mongodb.net:27017,ac-rwkaegx-shard-00-02.gfyyaga.mongodb.net:27017/?ssl=true&replicaSet=atlas-hsyte0-shard-0&authSource=admin&retryWrites=true&w=majority";
+        private const string connectionString = "mongodb+srv://harsh:123@cluster0.jgaahuz.mongodb.net/?retryWrites=true&w=majority";
         private const string dbName = "UserData";
         private const string userCollection = "Users";
 

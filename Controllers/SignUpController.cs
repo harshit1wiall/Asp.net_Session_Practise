@@ -34,7 +34,6 @@ namespace LoginPage.Controllers
                 }
                 else
                 {
-                    // Console.WriteLine("line 33 " + userExist);
                     ViewBag.success = true;
                     await db.SaveUser(user);
 
@@ -46,6 +45,7 @@ namespace LoginPage.Controllers
 
                 }
             }
+
             return View();
         }
     }
