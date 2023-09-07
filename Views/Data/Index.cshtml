@@ -1,23 +1,32 @@
 ﻿<head>
     <link rel="stylesheet" type="text/css" href="/css/Data.css" />
-
 </head>
 
 
- <body>
-   <div class="detail">
-        <form enctype="multipart/form-data" asp-controller="Data" asp-action="Index">
-            <fieldset>
-                <legend>Details:</legend>
 
-                <p><label for="Username">Name: </label></p>
-                <input type="text" name="Username" id="Username" placeholder="Enter your Name">
-                <p><label for="Description">Description: </label></p>
-                <textarea id="Description" name="Description" rows="5" cols="73" placeholder="Add data here!!"></textarea><br />
-                <div class="d-flex justify-content-center">
-                    <button type="submit"class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Submit</button>
-                </div>
-            </fieldset>
-        </form>
-    </div>
+
+
+
+
+<body>
+
+    <h2>Enter Details</h2>
+
+    <form asp-controller="Data" asp-action="Index" method="post">
+        <div class="form-group">
+            <label for="Username">Username:</label>
+            <input name="Username" class="form-control"  placeholder="Enter your Name" required />
+        </div>
+
+        <div class="form-group">
+            <label for="Description">Description</label>
+            <input name="Description" class="form-control"   placeholder="Tell me about yourself...."  required/>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
 </body>
+
+
+
+

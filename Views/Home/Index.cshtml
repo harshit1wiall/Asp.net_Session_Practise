@@ -1,19 +1,41 @@
-﻿
+﻿@model List<LoginPage.Models.Details>
 <head>
     <link rel="stylesheet" type="text/css" href="/css/Home.css" />
 </head>
 
-
 <body>
-    
+
     <div class="container">
         <h1>Welcome!! - @ViewBag.name</h1>
 
         <p>You are now Logged in</p>
-      
+
         <a asp-controller="Home" asp-action="Entry" class="btn btn-primary">ADD</a>
-        <a asp-controller="Home" asp-action="Logout" class="btn btn-danger text--center">Signout</a>
+        <a asp-controller="Home" asp-action="Logout" class="btn btn-danger text-center">Signout</a>
     </div>
-  
+    <div class="container">
+        @if (Model != null && Model.Count > 0)
+        {
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">@item.Username</h5>
+                                <p class="card-text">@item.Description</p>
+                                <a asp-controller="Data" asp-action="Edit" asp-route-myId="@item.MyId" class="btn btn-primary">Edit</a>
+                                <a asp-controller="Data" asp-action="Delete" asp-route-myId="@item.MyId" class="btn btn-danger">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <p>No data available.</p>
+        }
+    </div>
 
 </body>

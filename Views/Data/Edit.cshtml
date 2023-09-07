@@ -1,0 +1,28 @@
+﻿@model LoginPage.Models.Details
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/Data.css" />
+</head>
+
+
+<body>
+
+<h2>Edit User</h2>
+
+<form asp-controller="Data" asp-action="Edit" method="post">
+    <input type="hidden" asp-for="MyId" /> 
+
+    <div class="form-group">
+        <label asp-for="Username">Username:</label>
+        <input asp-for="Username" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description">Description:</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Index" asp-controller="Home" class="btn btn-secondary">Cancel</a>
+</form>
+</body>

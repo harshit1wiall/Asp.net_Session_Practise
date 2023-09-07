@@ -54,7 +54,7 @@ namespace LoginPage.Controllers
 
                     else
                     {
-                        Console.WriteLine(ViewBag.user);
+                        //   Console.WriteLine(ViewBag.user);
                         ViewBag.status = false;
                         ViewBag.message = "User not found";
                         return View();

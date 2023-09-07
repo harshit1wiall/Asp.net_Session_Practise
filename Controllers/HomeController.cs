@@ -1,5 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
+﻿using LoginPage.Service;
+using Microsoft.AspNetCore.Mvc;
+using MongoDB.Driver;
 
 namespace LoginPage.Controllers
 {
@@ -11,11 +12,12 @@ namespace LoginPage.Controllers
             {
                 if (HttpContext.Session.GetString("User").Any())
                 {
-                    //  Console.WriteLine("insde tempdata=--->" + TempData["name"]);
+                    DbMethods2 dbMethods = new DbMethods2();
+                    var result = dbMethods.ShowAll().Result;
+                    Console.WriteLine(result);
                     ViewBag.name = TempData["name"];
-                    return View();
+                    return View(result);
                 }
-
             }
             catch (Exception e)
             {
@@ -24,10 +26,13 @@ namespace LoginPage.Controllers
             }
             return RedirectToAction("Index", "Login");
 
+
+
+
         }
         public IActionResult Logout()
         {
-            Console.WriteLine("I am in Logout");
+            // Console.WriteLine("I am in Logout");
             HttpContext.Session.Clear();
             return RedirectToAction("Index", "Login");
         }
@@ -36,5 +41,6 @@ namespace LoginPage.Controllers
             Console.WriteLine("into enrty field");
             return RedirectToAction("Index", "Data");
         }
+
     }
 }

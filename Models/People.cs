@@ -16,7 +16,6 @@ namespace LoginPage.Models
 
         public string? Password { get; set; }
 
-        public string? Description { get; set; }
     }
 
 }
